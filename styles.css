@@ -1,0 +1,138 @@
+/* LESSON: CSS controls how the page looks. Each block says "for these elements, look like this".
+   Brand colours live once at the top, so changing one value changes it everywhere. */
+
+:root {
+  --edge: #020D08;      /* near black green, vignette edge */
+  --forest: #0A3121;    /* outer green */
+  --emerald: #145A3F;   /* mid green */
+  --glow: #1F7A55;      /* vignette center */
+  --gold: #B8914A;
+  --gold-light: #F7E9B5;
+  --gold-dark: #6E5020;
+  --champagne: #BFAE86;
+  --cream: #F1E8D2;
+  --text: #D9D2BE;
+  --line: rgba(201, 164, 94, .25);
+  --foil: linear-gradient(90deg, #6E5020 0%, #B8914A 22%, #F7E9B5 50%, #B8914A 78%, #6E5020 100%);
+  /* LESSON: "screen gold". The print foil fades to dark bronze at its ends, which vanishes on green
+     (1.1:1 contrast). On screens we use a gold with no dark ends so every letter stays readable. */
+  --foil-screen: linear-gradient(90deg, #E2C47F 0%, #FBF0C8 50%, #E2C47F 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--edge);
+  color: var(--text);
+  font: 400 17px/1.65 Inter, system-ui, sans-serif;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+/* LESSON: .wrap keeps content from stretching too wide on big screens, with 20px breathing room on phones. */
+.wrap { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(2, 13, 8, .82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: 70px; }
+.brand img { width: 150px; }
+.nav { display: flex; gap: 28px; font-size: 14px; letter-spacing: .04em; }
+.nav a { text-decoration: none; color: var(--champagne); }
+.nav a:hover { color: var(--gold-light); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block; text-decoration: none; font: 600 15px Inter, sans-serif;
+  padding: 14px 26px; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-gold { background: linear-gradient(90deg, #A07B3B, #E8D29B 50%, #A07B3B); color: #08211A; box-shadow: 0 6px 24px rgba(184, 145, 74, .25); }
+.btn-ghost { border: 1px solid var(--line); color: var(--cream); }
+.btn-small { padding: 9px 18px; font-size: 13px; }
+
+/* ---------- Hero: the vignette (dark edges, light center) ---------- */
+.hero {
+  background: radial-gradient(ellipse 65% 75% at 50% 45%, var(--glow) 0%, var(--emerald) 30%, var(--forest) 62%, var(--edge) 100%);
+  padding: 90px 0 110px; text-align: center; border-bottom: 1px solid var(--line);
+}
+.hero-inner { display: flex; flex-direction: column; align-items: center; }
+.hero-logo { width: min(460px, 86%); margin-bottom: 38px; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
+h1 {
+  font: 500 clamp(40px, 6vw, 68px)/1.08 'Cormorant Garamond', serif; color: var(--cream); margin-bottom: 20px;
+}
+h1 em, .foil {
+  font-style: italic; background: var(--foil-screen); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h1 em { font-weight: 600; filter: drop-shadow(0 1px 2px rgba(0,0,0,.45)); }
+.lead { max-width: 640px; font-size: 18px; color: var(--text); }
+.hero .lead { margin: 0 auto 34px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.fine { margin-top: 26px; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--champagne); }
+
+/* ---------- Sections: the calm green (dark bottom, lighter top) ---------- */
+.section { padding: 96px 0; }
+.section-alt { background: linear-gradient(to top, var(--edge) 0%, #0B3426 100%); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.eyebrow { font: 600 13px Cinzel, serif; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+h2 { font: 500 clamp(32px, 4.4vw, 48px)/1.12 'Cormorant Garamond', serif; color: var(--cream); margin-bottom: 40px; max-width: 760px; }
+h3 { font: 600 20px/1.3 'Cormorant Garamond', serif; color: var(--cream); margin-bottom: 8px; font-size: 24px; }
+
+/* LESSON: "grid" places cards side by side. On phones (the @media rule further down) they stack. */
+.cards { display: grid; gap: 20px; }
+.cards.three { grid-template-columns: repeat(3, 1fr); }
+.card {
+  background: linear-gradient(to top, rgba(2,13,8,.6), rgba(20,90,63,.25));
+  border: 1px solid var(--line); border-radius: 18px; padding: 30px 26px;
+}
+.num { display: block; font: 600 14px Cinzel, serif; letter-spacing: .2em; color: var(--gold); margin-bottom: 14px; }
+.privacy { margin-top: 32px; font-size: 15px; color: var(--champagne); max-width: 760px; }
+.privacy strong { color: var(--cream); }
+
+/* ---------- Steps ---------- */
+.steps { list-style: none; display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
+.steps li { display: flex; gap: 18px; align-items: flex-start; padding: 26px; border: 1px solid var(--line); border-radius: 18px; }
+.steps span {
+  flex: 0 0 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  font: 600 17px Cinzel, serif; color: #08211A; background: linear-gradient(90deg, #A07B3B, #E8D29B 50%, #A07B3B);
+}
+
+/* ---------- About ---------- */
+.about { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+.about-mark {
+  width: 220px; height: 220px; border-radius: 28px; display: grid; place-items: center;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, var(--glow), var(--forest) 70%, var(--edge));
+  border: 1px solid var(--line);
+}
+.about-mark img { width: 140px; }
+.about p + p { margin-top: 14px; }
+.about h2 { margin-bottom: 20px; }
+
+/* ---------- Contact ---------- */
+.contact { background: radial-gradient(ellipse 60% 80% at 50% 50%, var(--emerald) 0%, var(--forest) 55%, var(--edge) 100%); text-align: center; }
+.contact-inner { display: flex; flex-direction: column; align-items: center; }
+.contact h2 { margin-bottom: 18px; }
+.contact .lead { margin-bottom: 30px; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--line); padding: 36px 0; font-size: 13px; color: var(--champagne); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-inner img { width: 110px; }
+
+/* LESSON: @media = "on screens narrower than this, change the layout". This is what makes it work on phones. */
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .cards.three, .steps { grid-template-columns: 1fr; }
+  .about { grid-template-columns: 1fr; text-align: left; }
+  .about-mark { width: 160px; height: 160px; }
+  .about-mark img { width: 100px; }
+  .section { padding: 72px 0; }
+  .hero { padding: 64px 0 80px; }
+}
+@media (max-width: 480px) {
+  .brand img { width: 150px; }
+  .btn-small { padding: 8px 14px; font-size: 12px; }
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- LESSON: Everything in <head> is invisible on the page. It tells browsers and Google about the page. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- LESSON: The <title> is the blue headline Google shows in search results and the text on the browser tab.
+       Stockton Family Chiropractic's title says "Prosper, TX". This line is where that mistake lives. -->
+  <title>Maxbook | More Patients for Chiropractic Offices</title>
+
+  <!-- LESSON: The description is the grey text Google often shows under the title. -->
+  <meta name="description" content="Maxbook helps independent chiropractic offices turn Google searches into booked first visits with a better website, a stronger Google profile and an AI assistant that answers patients at any hour.">
+
+  <!-- LESSON: These make the link look good when it is shared in a text, on LinkedIn or Facebook. -->
+  <meta property="og:title" content="Maxbook | More patients, every week">
+  <meta property="og:description" content="Websites, Google profiles and AI assistants for chiropractic offices in the Central Valley.">
+  <meta property="og:image" content="https://maxbookhq.com/assets/maxbook-hero-1920x1080.png">
+  <meta property="og:url" content="https://maxbookhq.com/">
+
+  <!-- LESSON: The favicon is the tiny icon on the browser tab. -->
+  <link rel="icon" type="image/svg+xml" href="assets/maxbook-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/maxbook-favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/maxbook-apple-touch-180.png">
+
+  <!-- LESSON: Fonts come from Google Fonts. Same three fonts as the logo and brand sheet. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- LESSON: The look of the whole page lives in one separate file, styles.css. -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== HEADER: logo, menu, main button ========== -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="Maxbook home">
+        <img src="assets/maxbook-wordmark.svg" alt="Maxbook" width="170" height="35">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#problem">Why</a>
+        <a href="#services">Services</a>
+        <a href="#process">How it works</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="btn btn-gold btn-small" href="#contact">Free site review</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========== HERO: the first screen a visitor sees. One promise, one button. ========== -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <img class="hero-logo" src="assets/maxbook-lockup.svg" alt="Maxbook, AI growth for modern practices" width="520" height="185">
+        <h1>More patients, <em>every week.</em></h1>
+        <p class="lead">I help independent chiropractic offices turn Google searches into booked first visits, with a website that works on every phone, a Google profile that stands out, and an AI assistant that answers patients at any hour.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#contact">Get your free site review</a>
+          <a class="btn btn-ghost" href="#process">See how it works</a>
+        </div>
+        <p class="fine">Serving Stockton, Lodi, Manteca and Tracy</p>
+      </div>
+    </section>
+
+    <!-- ========== PROBLEM: show the owner the leak before offering the fix ========== -->
+    <section id="problem" class="section">
+      <div class="wrap">
+        <p class="eyebrow">Where new patients slip away</p>
+        <h2>Your next patient is searching right now.</h2>
+        <div class="cards three">
+          <article class="card">
+            <h3>They search at 10 PM</h3>
+            <p>Back pain doesn't keep office hours. Most people look for a chiropractor on their phone, at night, and book with whoever makes it easiest.</p>
+          </article>
+          <article class="card">
+            <h3>The phone rings mid-adjustment</h3>
+            <p>When you're with a patient and the front desk is busy, a new caller hears voicemail and calls the next office on the list.</p>
+          </article>
+          <article class="card">
+            <h3>The site leaves them guessing</h3>
+            <p>No first-visit price, no insurance info, no booking button. Every question they can't answer on their own is a reason to keep scrolling.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SERVICES: the three things you sell, in plain words ========== -->
+    <section id="services" class="section section-alt">
+      <div class="wrap">
+        <p class="eyebrow">What I build</p>
+        <h2>Three things that fill a schedule.</h2>
+        <div class="cards three">
+          <article class="card">
+            <span class="num">01</span>
+            <h3>A website that books</h3>
+            <p>Fast, secure, built for phones first. Your first-visit offer, insurance, hours and a clear "Book your first visit" button that opens your own scheduler.</p>
+          </article>
+          <article class="card">
+            <span class="num">02</span>
+            <h3>A Google profile that wins</h3>
+            <p>Photos, services, hours, booking link and review replies, so you look like the obvious choice in the map results where most patients start.</p>
+          </article>
+          <article class="card">
+            <span class="num">03</span>
+            <h3>An AI front-desk assistant</h3>
+            <p>Answers the questions new patients ask most, day or night: price, insurance, hours, what to expect. Then it points them straight to booking.</p>
+          </article>
+        </div>
+        <p class="privacy"><strong>Patient privacy first.</strong> The assistant answers general questions only and never collects symptoms or health details. Bookings go into your own scheduling system, not mine.</p>
+      </div>
+    </section>
+
+    <!-- ========== PROCESS: lowers the risk of saying yes ========== -->
+    <section id="process" class="section">
+      <div class="wrap">
+        <p class="eyebrow">How it works</p>
+        <h2>You see it before you pay for it.</h2>
+        <ol class="steps">
+          <li><span>1</span><div><h3>Free site review</h3><p>I record a short video walking through your website and Google profile, and show you exactly where patients are slipping away.</p></div></li>
+          <li><span>2</span><div><h3>Your mockup</h3><p>I design what your new site could look like. You see it before you pay anything.</p></div></li>
+          <li><span>3</span><div><h3>The build</h3><p>Half to start, half when you're happy with it. You own your site.</p></div></li>
+          <li><span>4</span><div><h3>Monthly results</h3><p>A short report every month: calls, booking clicks, new reviews and where you rank.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT: why a local owner should trust you ========== -->
+    <section id="about" class="section section-alt">
+      <div class="wrap about">
+        <div class="about-mark"><img src="assets/maxbook-mark.svg" alt="" width="160" height="160"></div>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Health science background. Local to you.</h2>
+          <p>I'm Xavier, the founder of Maxbook. I studied Health Science at Sacramento State and trained as a certified phlebotomy technician, so I understand how a clinic runs, from the front desk to the patient in the chair.</p>
+          <p>I started Maxbook to help local practices get the same AI and online tools the big groups use, without the big-agency price or the long contracts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT: one clear action ========== -->
+    <section id="contact" class="section contact">
+      <div class="wrap contact-inner">
+        <h2>Get your free site review.</h2>
+        <p class="lead">Send me your office name. Within two business days you'll get a short video showing where your website and Google profile are losing patients, and what to fix first. No cost, no obligation.</p>
+        <a class="btn btn-gold" href="mailto:hello@maxbookhq.com?subject=Free%20site%20review">hello@maxbookhq.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <img src="assets/maxbook-wordmark.svg" alt="Maxbook" width="120" height="25">
+      <p>AI growth for modern practices · San Joaquin County, California</p>
+      <p>&copy; 2026 Maxbook</p>
+    </div>
+  </footer>
+
+</body>
+</html>
